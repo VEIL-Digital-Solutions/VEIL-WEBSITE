@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veil-digital-solutions.github.io/VEIL-WEBSITE/sitemap.xml
