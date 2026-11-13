@@ -1,16 +1,16 @@
 :root {
   --navy: #07152f;
   --navy-2: #0d1f3d;
-  --blue: #0a6dff;
-  --cyan: #45d4ff;
-  --purple: #7a5cff;
+  --blue: #1677f9;
+  --cyan: #22c5f4;
+  --purple: #3567e8;
   --light: #f4f7fb;
   --soft: #eaf2ff;
   --text: #16243d;
   --muted: #5f6e82;
   --white: #ffffff;
-  --border: rgba(9, 30, 68, 0.08);
-  --shadow: 0 24px 60px rgba(7, 21, 47, 0.18);
+  --border: rgba(9, 30, 68, 0.1);
+  --shadow: 0 28px 72px rgba(2, 10, 28, 0.34);
 }
 
 * {
@@ -151,19 +151,20 @@ section {
 }
 
 .hero {
-  padding: 90px 0 76px;
+  overflow: hidden;
+  padding: 100px 0 94px;
   background:
-    radial-gradient(circle at top right, rgba(69, 212, 255, 0.22), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(122, 92, 255, 0.2), transparent 35%),
-    linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 50%, #101d3d 100%);
+    radial-gradient(ellipse at 86% 20%, rgba(22, 119, 249, 0.24), transparent 34%),
+    radial-gradient(ellipse at 7% 90%, rgba(34, 197, 244, 0.1), transparent 35%),
+    linear-gradient(135deg, #050d1c 0%, var(--navy) 54%, #0b1d3c 100%);
   color: var(--white);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.02fr 0.98fr;
   align-items: center;
-  gap: 40px;
+  gap: clamp(32px, 5vw, 72px);
 }
 
 .eyebrow {
@@ -181,16 +182,16 @@ section {
 
 .hero-copy h1 {
   margin-top: 18px;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 1.04;
-  letter-spacing: -0.06em;
-  max-width: 650px;
+  font-size: clamp(3rem, 5.5vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+  max-width: 690px;
 }
 
 .hero-copy p {
   margin-top: 18px;
-  max-width: 620px;
-  font-size: 1.08rem;
+  max-width: 590px;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.78);
 }
 
@@ -207,7 +208,7 @@ section {
   justify-content: center;
   min-height: 52px;
   padding: 0 22px;
-  border-radius: 12px;
+  border-radius: 8px;
   font-weight: 700;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -217,9 +218,9 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--blue), var(--purple));
+  background: linear-gradient(135deg, #1686ff, #225ce8);
   color: var(--white);
-  box-shadow: 0 18px 30px rgba(10, 109, 255, 0.35);
+  box-shadow: 0 14px 28px rgba(22, 119, 249, 0.28);
 }
 
 .btn-secondary {
@@ -254,101 +255,69 @@ section {
 
 .hero-visual {
   position: relative;
-  height: 500px;
-  display: grid;
-  place-items: center;
+  padding: 18px 8px 24px;
 }
 
-.orbit {
+.hero-image-frame {
+  overflow: hidden;
+  border: 1px solid rgba(135, 186, 255, 0.24);
+  border-radius: 18px;
+  background: #020711;
+  box-shadow: 0 32px 88px rgba(0, 0, 0, 0.48), 0 0 60px rgba(22, 119, 249, 0.14);
+  transform: perspective(1200px) rotateY(-4deg) rotateX(1deg);
+}
+
+.hero-brand-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1365 / 768;
+  object-fit: cover;
+}
+
+.hero-float-card {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-}
-
-.orbit-one {
-  width: 330px;
-  height: 330px;
-}
-
-.orbit-two {
-  width: 410px;
-  height: 410px;
-}
-
-.feature-card {
-  position: relative;
   z-index: 2;
-  width: min(350px, 100%);
-  padding: 34px 30px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.hero-logo {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 16px;
-}
-
-.card-badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(69, 212, 255, 0.15);
-  color: var(--cyan);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-}
-
-.feature-card h2 {
-  margin-top: 20px;
-  font-size: clamp(2rem, 3vw, 2.4rem);
-  letter-spacing: -0.05em;
-}
-
-.feature-card p {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.68rem;
-}
-
-.mini-card {
-  position: absolute;
   display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(8, 21, 42, 0.94);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32);
+  color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.hero-float-top {
+  top: 0;
+  right: -12px;
+  padding: 12px 16px;
+  font-size: 0.76rem;
+}
+
+.hero-float-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #32d49a;
+  box-shadow: 0 0 0 4px rgba(50, 212, 154, 0.12);
+}
+
+.hero-float-bottom {
+  right: 24px;
+  bottom: 0;
+  align-items: flex-start;
   flex-direction: column;
   gap: 2px;
-  padding: 16px 18px;
-  border-radius: 20px;
-  background: rgba(15, 33, 61, 0.8);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: var(--shadow);
-  z-index: 3;
-}
-
-.mini-card strong {
-  color: var(--white);
-  font-size: 0.9rem;
-}
-
-.mini-card span {
-  color: rgba(255,255,255,0.72);
+  padding: 13px 17px;
   font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
 }
 
-.mini-one {
-  top: 60px;
-  left: 0;
-}
-
-.mini-two {
-  right: 18px;
-  bottom: 38px;
+.hero-float-bottom strong {
+  color: var(--white);
+  font-size: 0.82rem;
 }
 
 .metrics {
@@ -366,7 +335,7 @@ section {
 .metric-item {
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 12px;
   padding: 22px 20px;
 }
 
@@ -385,7 +354,7 @@ section {
 }
 
 .section {
-  padding: 100px 0;
+  padding: clamp(72px, 8vw, 108px) 0;
 }
 
 .section-heading {
@@ -481,7 +450,7 @@ section {
 .info-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 14px;
   padding: 28px 24px;
   box-shadow: 0 12px 28px rgba(12, 25, 48, 0.04);
 }
@@ -509,7 +478,7 @@ section {
 .service-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 14px;
   padding: 28px 24px;
   box-shadow: 0 16px 30px rgba(11, 24, 49, 0.03);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -557,7 +526,7 @@ section {
   padding: 28px 22px;
   background: linear-gradient(180deg, #ffffff, #f7faff);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 14px;
   text-align: center;
 }
 
@@ -655,7 +624,7 @@ section {
   padding: 32px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 14px;
   box-shadow: 0 16px 30px rgba(11, 24, 49, 0.05);
 }
 
@@ -686,7 +655,7 @@ section {
   padding: 28px 24px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 22px;
+  border-radius: 14px;
   box-shadow: 0 12px 28px rgba(12, 25, 48, 0.04);
 }
 
@@ -757,7 +726,7 @@ section {
   text-align: center;
   padding: 68px 34px;
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 30px;
+  border-radius: 18px;
   background: rgba(255,255,255,0.02);
 }
 
@@ -893,18 +862,9 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-visual {
-    height: 390px;
-  }
-
-  .orbit-one {
-    width: 290px;
-    height: 290px;
-  }
-
-  .orbit-two {
-    width: 360px;
-    height: 360px;
+  .hero-grid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 28px;
   }
 }
 
@@ -945,11 +905,21 @@ section {
   }
 
   .hero {
-    padding-top: 68px;
+    padding: 72px 0 74px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
   }
 
   .hero-copy h1 {
     max-width: 100%;
+  }
+
+  .hero-visual {
+    width: min(640px, 100%);
+    margin: 0 auto;
   }
 
   .service-grid,
@@ -978,22 +948,25 @@ section {
     flex-direction: column;
   }
 
-  .feature-card {
-    padding: 26px 18px;
+  .hero-image-frame {
+    border-radius: 12px;
+    transform: none;
   }
 
-  .hero-visual {
-    height: 340px;
+  .hero-float-top {
+    right: -2px;
+    padding: 10px 12px;
+    font-size: 0.68rem;
   }
 
-  .orbit-one {
-    width: 250px;
-    height: 250px;
+  .hero-float-bottom {
+    right: 10px;
+    padding: 10px 12px;
+    font-size: 0.66rem;
   }
 
-  .orbit-two {
-    width: min(310px, 100%);
-    height: min(310px, 100%);
+  .hero-float-bottom strong {
+    font-size: 0.72rem;
   }
 
   .contact-box {

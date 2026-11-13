@@ -8,7 +8,7 @@ The site is a static HTML, CSS and JavaScript website hosted on GitHub Pages. It
 2. Open `index.html` and choose the pencil icon to edit text, links, services or contact details. Keep the HTML tags around the text in place.
 3. Use **Commit changes** to save. GitHub Pages will publish the update after its deployment finishes.
 
-To update the logo, replace `assets/veil-logo.svg` with the new logo while keeping that exact path and filename. The same logo file is used in the header, hero, browser tab and structured search information. SVG is recommended so the logo stays sharp at different sizes.
+The header icon and browser tab use `assets/veil-logo.svg`. The supplied VEIL brand artwork appears in the homepage hero as `assets/veil-brand.png`. Keep both files in place when updating the brand.
 
 To change the share-preview artwork, replace `assets/veil-social-card.svg` and keep its filename. Check the email address and contact information in `index.html` before publishing changes to them.
 
