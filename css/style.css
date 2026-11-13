@@ -103,6 +103,13 @@ section {
   filter: drop-shadow(0 8px 14px rgba(69, 212, 255, 0.28));
 }
 
+.brand-logo {
+  width: 188px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
 .brand-text strong {
   display: block;
   font-size: 1.35rem;
@@ -931,6 +938,11 @@ section {
 }
 
 @media (max-width: 560px) {
+  .brand-logo {
+    width: 154px;
+    height: 52px;
+  }
+
   .btn {
     width: 100%;
   }
